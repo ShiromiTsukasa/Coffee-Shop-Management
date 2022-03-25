@@ -1,0 +1,5 @@
+{
+    "java.help.shareDiagnostics": true,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.dependency.packagePresentation": "flat"
+}
