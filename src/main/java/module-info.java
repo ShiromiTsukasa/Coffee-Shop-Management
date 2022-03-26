@@ -1,6 +1,6 @@
 module com {
-    requires javafx.controls;
-    requires javafx.fxml;
+    requires transitive javafx.controls;
+    requires transitive javafx.fxml;
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
@@ -9,4 +9,9 @@ module com {
     exports com.UserAsClient;
     exports com.UserAsClient.Controller;
     opens com.UserAsClient.Controller to javafx.fxml;
+
+    opens com.UserAsAdmin to javafx.fxml;
+    exports com.UserAsAdmin;
+    exports com.UserAsAdmin.Controller;
+    opens com.UserAsAdmin.Controller to javafx.fxml;
 }
