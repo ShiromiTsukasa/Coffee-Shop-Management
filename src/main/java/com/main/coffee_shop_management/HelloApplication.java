@@ -1,4 +1,4 @@
-package com.main.coffee_shop_managment;
+package com.main.coffee_shop_management;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

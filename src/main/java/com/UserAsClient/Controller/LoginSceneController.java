@@ -57,7 +57,7 @@ public class LoginSceneController {
                 }
             }
 
-            // TODO: Replace this with referall to the main content once the FXML is done
+            // TODO: Replace this with referal to the main content once the FXML is done
             if (found) {
                 System.out.println("User found");
             } else {
@@ -68,5 +68,12 @@ public class LoginSceneController {
         } finally {
             sc.close();
         }
+    }
+
+    @FXML
+    private void moveToRegister(ActionEvent event) {
+        event.consume();
+
+        // TODO: Replace this with referal to the registration scene once the FXML is done
     }
 }

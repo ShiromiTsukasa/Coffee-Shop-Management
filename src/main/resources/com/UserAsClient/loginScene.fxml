@@ -65,7 +65,7 @@
                   </StackPane>
                   <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
                      <children>
-                        <Hyperlink fx:id="registerLink" alignment="CENTER" prefHeight="33.0" prefWidth="78.0" text="Register">
+                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" text="Register">
                            <font>
                               <Font size="16.0" />
                            </font>
