@@ -1,4 +1,5 @@
 package com.main.UserAsAdmin;
 
-public class Main {
+public class Main{
+
 }
