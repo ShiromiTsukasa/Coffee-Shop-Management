@@ -70,7 +70,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.main.coffee_shop_management/com.main.coffee_shop_management.HelloApplication
+                                com/com.UserAsClient.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
