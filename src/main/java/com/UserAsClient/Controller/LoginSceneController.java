@@ -57,6 +57,7 @@ public class LoginSceneController {
                 }
             }
 
+            // TODO: Replace this with referall to the main content once the FXML is done
             if (found) {
                 System.out.println("User found");
             } else {
