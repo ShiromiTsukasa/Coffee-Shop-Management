@@ -29,7 +29,7 @@
                   <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" styleClass="welcome-title" stylesheets="@../../../../src/main/resources/Styling/LoginSceneStyle.css" text="Welcome to Coffee Kdav" GridPane.columnSpan="2">
+                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" styleClass="welcome-title" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Kdav" GridPane.columnSpan="2">
                      <font>
                         <Font size="29.0" />
                      </font>
