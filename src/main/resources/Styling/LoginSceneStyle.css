@@ -1,4 +1,6 @@
-.welcome-title {
-    -fx-font-family: Comfortaa;
-    font-family: Comfortaa;
+.welcome-title{
+    -fx-font-size: 30px;
+    -fx-text-fill: brown;
+    -fx-font-weight: 700;
+    -fx-font-family: "Cambria Math";
 }
