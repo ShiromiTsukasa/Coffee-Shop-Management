@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -29,46 +31,66 @@
                   <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" styleClass="welcome-title" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Kdav" GridPane.columnSpan="2">
+                  <PasswordField fx:id="password" prefHeight="42.0" prefWidth="264.0" promptText="Password" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="textFont" />
+                        <String fx:value="field" />
+                     </styleClass>
+                  </PasswordField>
+                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Kdav" GridPane.columnSpan="2">
                      <font>
                         <Font size="29.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="textFont" />
+                        <String fx:value="title" />
+                     </styleClass>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" text="Username" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" text="Password" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="userName" prefHeight="42.0" prefWidth="264.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" styleClass="textFont" stylesheets="@../../Styling/LoginSceneStyle.css" text="Username" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
-                  </TextField>
-                  <TextField fx:id="password" prefHeight="49.0" prefWidth="264.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" styleClass="textFont" stylesheets="@../../Styling/LoginSceneStyle.css" text="Password" GridPane.rowIndex="2">
                      <font>
                         <Font size="20.0" />
                      </font>
+                  </Label>
+                  <TextField fx:id="userName" prefHeight="42.0" prefWidth="264.0" promptText="Username" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="textFont" />
+                        <String fx:value="field" />
+                     </styleClass>
                   </TextField>
                   <StackPane prefHeight="72.0" prefWidth="400.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
                      <children>
-                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="153.0" text="Login">
+                        <Button fx:id="loginButton" maxHeight="47.0" maxWidth="164.0" minHeight="47.0" minWidth="164.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="164.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Login">
                            <font>
                               <Font size="20.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="textFont" />
+                              <String fx:value="button" />
+                           </styleClass>
                         </Button>
                      </children>
                   </StackPane>
                   <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
                      <children>
-                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" text="Register">
+                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" style="text-decoration: none;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Register">
                            <font>
                               <Font size="16.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="textFont" />
+                              <String fx:value="link" />
+                           </styleClass>
                         </Hyperlink>
                      </children>
                   </StackPane>
