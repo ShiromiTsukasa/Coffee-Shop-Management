@@ -6,23 +6,27 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.UserAsClient.Main;
 import com.helper.Crypter;
 import com.helper.Parser;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginSceneController {
-    @FXML
-    public Button btn;
-
     @FXML
     public TextField userName;
 
     @FXML
     public TextField password;
+
+    private Stage stage;
 
     @FXML
     private void login(ActionEvent event) {
@@ -74,6 +78,23 @@ public class LoginSceneController {
     private void moveToRegister(ActionEvent event) {
         event.consume();
 
-        // TODO: Replace this with referal to the registration scene once the FXML is done
+        System.out.println(getClass());
+
+        stage = (Stage) ((Hyperlink) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("registerScene.fxml"));
+        try {
+            Parent root = loader.load();
+            RegisterSceneController controller = loader.getController();
+            controller.setWrapText();
+            Scene scene = new Scene(root, 600, 400);
+
+            stage.setTitle("Register");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }

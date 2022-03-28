@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 .textFont{
     -fx-font-family: Comfortaa;
+    font-family: Comfortaa;
 }
