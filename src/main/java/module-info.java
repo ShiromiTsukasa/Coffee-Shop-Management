@@ -1,6 +1,7 @@
 module com {
     requires transitive javafx.controls;
     requires transitive javafx.fxml;
+    requires transitive org.json;
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;

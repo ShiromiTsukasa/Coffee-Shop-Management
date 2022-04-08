@@ -1,0 +1,9 @@
+.coffee-list{
+    -fx-background-color: white;
+}
+.border-pane{
+    -fx-background-radius: 30px;
+}
+.main-order-background-color{
+    -fx-background-color: #3c3030;
+}

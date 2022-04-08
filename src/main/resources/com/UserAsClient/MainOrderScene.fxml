@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="900.0" styleClass="main-order-background-color" stylesheets="@../../Styling/MainOrder.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsClient.Controller.MainOrderSceneController">
+   <children>
+      <GridPane hgap="10.0" layoutX="14.0" layoutY="98.0" prefHeight="549.0" prefWidth="525.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="175.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="175.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Americano.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Americano">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="136.0" prefHeight="40.0" prefWidth="169.0" style="-fx-wrap-text: true;" text="Espresso, Hot water" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/cappuccino.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Cappuccino">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Espresso, Steamed milk, Foam" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Cappuccinno" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.columnIndex="2">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/mocha.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Mocha">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="9.0" layoutY="137.0" prefHeight="40.0" prefWidth="152.0" style="-fx-wrap-text: true;" text="Espresso, Chocolate, Steamed Milk" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Mocha" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Latte.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Latte">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Espresso, Milk" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Latte" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Espresso.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Espresso">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Double espresso, Hot milk" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Espresso" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Micchiato.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Micchiato">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Espresso, Foamed Milk" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Micchiato" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Red-Eye.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Red Eye">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Brewed coffee, Espresso" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Red Eye" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/americano_1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Americano">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="136.0" prefHeight="40.0" prefWidth="169.0" style="-fx-wrap-text: true;" text="Espresso, Hot water" />
+                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Americano" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Black_Eye.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Black Eye">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Brewed coffee, Espresso" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Black Eye" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../Styling/MainOrder.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="105.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/Ice_Coffee_1.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutY="107.0" prefHeight="28.0" prefWidth="169.0" text="Ice Coffee">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Coffee, Milk" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Ice Coffee" textFill="TRANSPARENT" />
+               </children>
+               <styleClass>
+                  <String fx:value="coffee-list" />
+                  <String fx:value="border-pane" />
+               </styleClass>
+            </Pane>
+         </children>
+      </GridPane>
+      <Label alignment="CENTER" layoutX="175.0" layoutY="11.0" prefHeight="79.0" prefWidth="550.0" style="-fx-font-weight: 700;" text="Choose Your Coffee" textFill="#e8b058">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="userProfile" alignment="CENTER" layoutX="763.0" layoutY="11.0" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="User Name" textAlignment="CENTER" />
+      <ListView layoutX="564.0" layoutY="98.0" prefHeight="520.0" prefWidth="320.0" />
+      <Button fx:id="logOutButton" layoutX="808.0" layoutY="622.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Log out" />
+   </children>
+</Pane>
