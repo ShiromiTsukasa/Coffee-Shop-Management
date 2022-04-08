@@ -13,6 +13,7 @@ import com.helper.Parser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
@@ -20,6 +21,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginSceneController {
+    private Scene scene;
+    private Parent root;
     @FXML
     public TextField userName;
 
@@ -28,6 +31,17 @@ public class LoginSceneController {
 
     private Stage stage;
 
+    public void switchToMainOrderScene(ActionEvent event) throws IOException{
+        FXMLLoader loader =new FXMLLoader(Main.class.getResource("MainOrderScene.fxml"));
+        root = loader.load();
+        MainOrderSceneController controller = loader.getController();
+        controller.setUserProfile(userName.getText());
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setTitle("Main order Screen");
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     private void login(ActionEvent event) {
         event.consume();
@@ -64,6 +78,28 @@ public class LoginSceneController {
             // TODO: Replace this with referal to the main content once the FXML is done
             if (found) {
                 System.out.println("User found");
+                System.out.println(userName.getText());
+                try{
+                    switchToMainOrderScene(event);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                /*FXMLLoader loader2 = new FXMLLoader(Main.class.getResource("MainOrderScene.fxml"));
+                try{
+                    System.out.println(getClass());
+                 //   switchToMainOrderScene(event);
+                    root  = loader2.load();
+                    MainOrderSceneController mainOrderSceneController = loader2.getController();
+                    mainOrderSceneController.setUserProfile(userName.getText());
+
+                    stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }*/
             } else {
                 System.out.println("User not found");
             }

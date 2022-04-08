@@ -40,7 +40,7 @@
                         <String fx:value="field" />
                      </styleClass>
                   </PasswordField>
-                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Kdav" GridPane.columnSpan="2">
+                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Tam Srok" GridPane.columnSpan="2">
                      <font>
                         <Font size="29.0" />
                      </font>
@@ -83,7 +83,7 @@
                   </StackPane>
                   <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
                      <children>
-                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" style="text-decoration: none;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Register">
+                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Register">
                            <font>
                               <Font size="16.0" />
                            </font>
