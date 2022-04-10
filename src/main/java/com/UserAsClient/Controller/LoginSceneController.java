@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class LoginSceneController {
@@ -80,6 +81,9 @@ public class LoginSceneController {
                 System.out.println("User found");
                 System.out.println(userName.getText());
                 try{
+                    stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                    stage.setUserData(new UserProfile(userName.getText()));
+                    
                     switchToMainOrderScene(event);
                 }catch (Exception e){
                     e.printStackTrace();
@@ -129,7 +133,27 @@ public class LoginSceneController {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void sendToTestField(ActionEvent event) {
+        event.consume();
+
+        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("test.fxml"));
+        try {
+            Parent root = loader.load();
+            TestController controller = loader.getController();
+
+            Scene scene = new Scene(root, 600, 400);
+
+            stage.setTitle("Test Field");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
