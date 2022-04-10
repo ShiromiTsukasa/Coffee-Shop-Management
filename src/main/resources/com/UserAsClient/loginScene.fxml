@@ -14,24 +14,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsClient.Controller.LoginSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="login-Scene-background-image" stylesheets="@../../Styling/LoginSceneStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsClient.Controller.LoginSceneController">
    <children>
-      <VBox layoutX="100.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
+      <VBox layoutX="175.0" layoutY="90.0" prefHeight="240.0" prefWidth="422.0" styleClass="pane-background" stylesheets="@../../Styling/LoginSceneStyle.css">
          <children>
-            <GridPane alignment="CENTER" prefHeight="303.0" prefWidth="400.0">
+            <GridPane alignment="CENTER" prefHeight="240.0" prefWidth="411.0">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="136.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="264.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="143.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="306.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="13.0" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <PasswordField fx:id="password" prefHeight="42.0" prefWidth="264.0" promptText="Password" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <PasswordField fx:id="password" prefHeight="42.0" prefWidth="264.0" promptText="Password" style="-fx-background-radius: 10;" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -40,26 +40,25 @@
                         <String fx:value="field" />
                      </styleClass>
                   </PasswordField>
-                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="60.0" prefWidth="403.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Tam Srok" GridPane.columnSpan="2">
+                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Username: ">
                      <font>
-                        <Font size="29.0" />
+                        <Font size="20.0" />
                      </font>
                      <styleClass>
                         <String fx:value="textFont" />
-                        <String fx:value="title" />
+                        <String fx:value="label-color" />
                      </styleClass>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" styleClass="textFont" stylesheets="@../../Styling/LoginSceneStyle.css" text="Username" GridPane.rowIndex="1">
+                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Password: " textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="textFont" />
+                        <String fx:value="label-color" />
+                     </styleClass>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" styleClass="textFont" stylesheets="@../../Styling/LoginSceneStyle.css" text="Password" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="userName" prefHeight="42.0" prefWidth="264.0" promptText="Username" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="userName" prefHeight="42.0" prefWidth="264.0" promptText="Username" style="-fx-background-radius: 10;" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -68,11 +67,11 @@
                         <String fx:value="field" />
                      </styleClass>
                   </TextField>
-                  <StackPane prefHeight="72.0" prefWidth="400.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                  <StackPane prefHeight="46.0" prefWidth="384.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="loginButton" maxHeight="47.0" maxWidth="164.0" minHeight="47.0" minWidth="164.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="164.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Login">
+                        <Button fx:id="loginButton" alignment="CENTER" maxHeight="47.0" maxWidth="164.0" minHeight="43.0" minWidth="150.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="150.0" style="-fx-background-radius: 20;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Login" textAlignment="CENTER">
                            <font>
-                              <Font size="20.0" />
+                              <Font size="11.0" />
                            </font>
                            <styleClass>
                               <String fx:value="textFont" />
@@ -81,9 +80,9 @@
                         </Button>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
                      <children>
-                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Register">
+                        <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Register" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -98,5 +97,14 @@
             </GridPane>
          </children>
       </VBox>
+      <Label alignment="CENTER" contentDisplay="TOP" layoutX="11.0" layoutY="22.0" prefHeight="60.0" prefWidth="578.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Welcome to Coffee Tam Srok" textAlignment="CENTER" textFill="#e9ab60">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+         <styleClass>
+            <String fx:value="textFont" />
+            <String fx:value="title" />
+         </styleClass>
+      </Label>
    </children>
 </Pane>
