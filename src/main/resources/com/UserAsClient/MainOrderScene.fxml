@@ -58,7 +58,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Espresso, Steamed milk, Foam" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Cappuccinno" textFill="TRANSPARENT" />
+                  <Button fx:id="cappuccinoButton" mnemonicParsing="false" onAction="#orderCustomizeCappuccino" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Cappuccinno" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -78,7 +78,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="9.0" layoutY="137.0" prefHeight="40.0" prefWidth="152.0" style="-fx-wrap-text: true;" text="Espresso, Chocolate, Steamed Milk" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Mocha" textFill="TRANSPARENT" />
+                  <Button fx:id="mochaButton" mnemonicParsing="false" onAction="#orderCustomizeMocha" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Mocha" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -98,7 +98,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Espresso, Milk" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Latte" textFill="TRANSPARENT" />
+                  <Button fx:id="latteButton" mnemonicParsing="false" onAction="#orderCustomizeLatte" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Latte" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -118,7 +118,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Double espresso, Hot milk" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Espresso" textFill="TRANSPARENT" />
+                  <Button fx:id="espressoButton" mnemonicParsing="false" onAction="#orderCustomizeEspresso" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Espresso" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -138,7 +138,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="5.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Espresso, Foamed Milk" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Micchiato" textFill="TRANSPARENT" />
+                  <Button fx:id="micchiatoButton" mnemonicParsing="false" onAction="#orderCustomizeMicchiato" prefHeight="175.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Micchiato" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -158,7 +158,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="6.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Brewed coffee, Espresso" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Red Eye" textFill="TRANSPARENT" />
+                  <Button fx:id="redEyeButton" mnemonicParsing="false" onAction="#orderCustomizeRedEye" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Red Eye" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -178,7 +178,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutY="136.0" prefHeight="40.0" prefWidth="169.0" style="-fx-wrap-text: true;" text="Espresso, Hot water" />
-                  <Button mnemonicParsing="false" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Americano" textFill="TRANSPARENT" />
+                  <Button fx:id="americanoButton" mnemonicParsing="false" onAction="#orderCustomizeAmericano" prefHeight="175.0" prefWidth="170.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Americano" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -198,7 +198,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="5.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Brewed coffee, Espresso" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Black Eye" textFill="TRANSPARENT" />
+                  <Button fx:id="blackEyeButton" mnemonicParsing="false" onAction="#orderCustomizeBlackEye" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Black Eye" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -218,7 +218,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="5.0" layoutY="137.0" prefHeight="40.0" prefWidth="158.0" style="-fx-wrap-text: true;" text="Coffee, Milk" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Ice Coffee" textFill="TRANSPARENT" />
+                  <Button fx:id="iceCoffeeButton" mnemonicParsing="false" onAction="#orderCustomizeIceCoffee" prefHeight="179.0" prefWidth="169.0" style="-fx-background-radius: 30px; -fx-background-color: transparent;" text="Ice Coffee" textFill="TRANSPARENT" />
                </children>
                <styleClass>
                   <String fx:value="coffee-list" />
@@ -233,7 +233,7 @@
          </font>
       </Label>
       <Label fx:id="userProfile" alignment="CENTER" layoutX="763.0" layoutY="11.0" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="User Name" textAlignment="CENTER" />
-      <ListView layoutX="564.0" layoutY="98.0" prefHeight="520.0" prefWidth="320.0" />
+      <ListView fx:id="recieptView" layoutX="564.0" layoutY="98.0" prefHeight="520.0" prefWidth="320.0" />
       <Button fx:id="logOutButton" layoutX="808.0" layoutY="622.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Log out" />
    </children>
 </Pane>
