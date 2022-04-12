@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" styleClass="main-background-color" stylesheets="@../../Styling/OrderCustomizeScene.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsClient.OrderCustomizeScene">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" styleClass="main-background-color" stylesheets="@../../Styling/OrderCustomizeScene.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsClient.Controller.OrderCustomizeSceneController">
    <children>
-      <Label alignment="CENTER" layoutX="82.0" layoutY="14.0" prefHeight="46.0" prefWidth="237.0" text="Americano" textAlignment="CENTER">
+      <Label fx:id="coffeeName" alignment="CENTER" layoutX="82.0" layoutY="14.0" prefHeight="46.0" prefWidth="237.0" text="Americano" textAlignment="CENTER">
          <font>
             <Font size="25.0" />
          </font>
@@ -39,7 +39,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="110.0" text="Big" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="110.0" text="Large" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
@@ -50,16 +50,16 @@
                      <children>
                         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="145.0">
                            <children>
-                              <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="-" textAlignment="CENTER">
+                              <Button fx:id="smallDecrement" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleSmallDecrement" prefHeight="40.0" prefWidth="40.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="-" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Button>
-                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="237.0" text="0" textAlignment="CENTER">
+                              <Label fx:id="smallCounter" alignment="CENTER" prefHeight="40.0" prefWidth="237.0" text="0" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font></Label>
-                              <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="23.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="+" textAlignment="CENTER">
+                              <Button fx:id="smallIncrement" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleSmallIncrement" prefHeight="40.0" prefWidth="23.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="+" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -76,16 +76,16 @@
                      <children>
                         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="145.0">
                            <children>
-                              <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="-" textAlignment="CENTER">
+                              <Button fx:id="mediumDecrement" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleMediumDecrement" prefHeight="40.0" prefWidth="40.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="-" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Button>
-                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="237.0" text="0" textAlignment="CENTER">
+                              <Label fx:id="mediumCounter" alignment="CENTER" prefHeight="40.0" prefWidth="237.0" text="0" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font></Label>
-                              <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="23.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="+" textAlignment="CENTER">
+                              <Button fx:id="mediumIncrement" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleMediumIncrement" prefHeight="40.0" prefWidth="23.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="+" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -102,16 +102,16 @@
                      <children>
                         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="145.0">
                            <children>
-                              <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="-" textAlignment="CENTER">
+                              <Button fx:id="largeDecrement" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleLargeDecrement" prefHeight="40.0" prefWidth="40.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="-" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Button>
-                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="237.0" text="0" textAlignment="CENTER">
+                              <Label fx:id="largeCounter" alignment="CENTER" prefHeight="40.0" prefWidth="237.0" text="0" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font></Label>
-                              <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="23.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="+" textAlignment="CENTER">
+                              <Button fx:id="largeIncrement" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleLargeIncrement" prefHeight="40.0" prefWidth="23.0" styleClass="button-quantity" stylesheets="@../../Styling/OrderCustomizeScene.css" text="+" textAlignment="CENTER">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -122,17 +122,17 @@
                   </StackPane>
                </children>
             </HBox>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="54.0" styleClass="price-label" stylesheets="@../../Styling/OrderCustomizeScene.css" text="\$ 5" GridPane.rowIndex="2">
+            <Label fx:id="priceLargeLabel" alignment="CENTER" prefHeight="30.0" prefWidth="54.0" styleClass="price-label" stylesheets="@../../Styling/OrderCustomizeScene.css" text="\$ 5" GridPane.rowIndex="2">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="54.0" styleClass="price-label" stylesheets="@../../Styling/OrderCustomizeScene.css" text="\$ 4.5" GridPane.rowIndex="1">
+            <Label fx:id="priceMediumLabel" alignment="CENTER" prefHeight="30.0" prefWidth="54.0" styleClass="price-label" stylesheets="@../../Styling/OrderCustomizeScene.css" text="\$ 4.5" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="54.0" styleClass="price-label" stylesheets="@../../Styling/OrderCustomizeScene.css" text="\$ 4">
+            <Label fx:id="priceSmallLabel" alignment="CENTER" prefHeight="30.0" prefWidth="54.0" styleClass="price-label" stylesheets="@../../Styling/OrderCustomizeScene.css" text="\$ 4">
                <font>
                   <Font size="15.0" />
                </font>
@@ -145,12 +145,12 @@
                <children>
                   <HBox alignment="CENTER_LEFT" minWidth="50.0" prefHeight="46.0" prefWidth="100.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Cancel" />
+                        <Button fx:id="cancelOrder" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCancelOrder" prefHeight="30.0" prefWidth="75.0" text="Cancel" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="100.0">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="84.0" text="Continue" textAlignment="CENTER" />
+                        <Button fx:id="proceedOrder" alignment="CENTER" mnemonicParsing="false" onAction="#handleProceedOrder" prefHeight="32.0" prefWidth="84.0" text="Continue" textAlignment="CENTER" />
                      </children>
                   </HBox>
                </children>

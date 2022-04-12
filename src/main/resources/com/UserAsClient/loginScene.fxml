@@ -31,25 +31,7 @@
                   <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <PasswordField fx:id="password" prefHeight="42.0" prefWidth="264.0" promptText="Password" style="-fx-background-radius: 10;" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="textFont" />
-                        <String fx:value="field" />
-                     </styleClass>
-                  </PasswordField>
                   <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Username: ">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="textFont" />
-                        <String fx:value="label-color" />
-                     </styleClass>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Password: " textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -67,6 +49,24 @@
                         <String fx:value="field" />
                      </styleClass>
                   </TextField>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Password: " textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="textFont" />
+                        <String fx:value="label-color" />
+                     </styleClass>
+                  </Label>
+                  <PasswordField fx:id="password" prefHeight="42.0" prefWidth="264.0" promptText="Password" style="-fx-background-radius: 10;" stylesheets="@../../Styling/LoginSceneStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="textFont" />
+                        <String fx:value="field" />
+                     </styleClass>
+                  </PasswordField>
                   <StackPane prefHeight="46.0" prefWidth="384.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
                      <children>
                         <Button fx:id="loginButton" alignment="CENTER" maxHeight="47.0" maxWidth="164.0" minHeight="43.0" minWidth="150.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="150.0" style="-fx-background-radius: 20;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Login" textAlignment="CENTER">

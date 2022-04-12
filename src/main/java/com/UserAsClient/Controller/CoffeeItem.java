@@ -34,7 +34,37 @@ public class CoffeeItem {
         return coffee.getName();
     }
 
-    public double getCoffeePrice() {
-        return coffee.getPrice();
+    public double getPriceSmall() {
+        return coffee.getPriceSmall() * quantity;
+    }
+
+    public double getUnitPriceSmall() {
+        return coffee.getPriceSmall();
+    }
+
+    public double getPriceMedium() {
+        return coffee.getPriceMedium() * quantity;
+    }
+
+    public double getUnitPriceMedium() {
+        return coffee.getPriceMedium();
+    }
+
+    public double getPriceLarge() {
+        return coffee.getPriceLarge() * quantity;
+    }
+
+    public double getUnitPriceLarge() {
+        return coffee.getPriceLarge();
+    }
+
+    public void addQuantity() {
+        quantity++;
+    }
+
+    public void removeQuantity() {
+        if (quantity > 0) {
+            quantity--;
+        }
     }
 }

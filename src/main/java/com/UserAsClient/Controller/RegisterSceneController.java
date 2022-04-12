@@ -14,6 +14,8 @@ import com.UserAsClient.Main;
 import com.helper.Crypter;
 import com.helper.Parser;
 
+import org.json.JSONObject;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -88,6 +90,8 @@ public class RegisterSceneController {
             String password = passwordPassField.getText();
             String confirmPassword = confirmPasswordPassField.getText();
 
+            boolean success = false;
+
             // read each line
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
@@ -117,8 +121,55 @@ public class RegisterSceneController {
                         e.printStackTrace();
                     }
 
-                    statusIndicator.setText("Registration successful!");
-                    statusIndicator.setStyle("-fx-text-fill: green;");
+                    File dataFolder = new File("data");
+                    try {
+                        dataFolder.mkdir();
+
+                        File userAsClientFolder = new File("data/userAsClient");
+                        try {
+                            userAsClientFolder.mkdir();
+
+                            File userFolder = new File("data/userAsClient/" + username);
+                            try {
+                                userFolder.mkdir();
+
+                                File userDataFile = new File("data/userAsClient/" + username + "/profile.json");
+
+                                try {
+                                    userDataFile.createNewFile();
+
+                                    try (BufferedWriter bf = new BufferedWriter(new FileWriter(userDataFile, true))) {
+                                        JSONObject userProfile = new JSONObject();
+                                        userProfile.put("username", username);
+                                        
+                                        bf.write(userProfile.toString(4) + "\n");
+    
+                                        statusIndicator.setText("Registration successful!");
+                                        statusIndicator.setStyle("-fx-text-fill: green;");
+    
+                                        success = true;
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                            } catch (SecurityException se) {
+                                se.printStackTrace();
+                            }
+                        } catch (SecurityException se) {
+                            se.printStackTrace();
+                        }
+                    } catch (SecurityException se) {
+                        se.printStackTrace();
+                    }
+
+                    if (!success) {
+                        statusIndicator.setText("Registration failed!");
+                        statusIndicator.setStyle("-fx-text-fill: red;");
+                    }
+
                 } else {
                     ArrayList<String> statusTokens = new ArrayList<String>();
                     if ((err & 1) == 1) {
@@ -126,10 +177,14 @@ public class RegisterSceneController {
                     }
 
                     if ((err & 2) == 2) {
+                        statusTokens.add("Username contains invalid character!");
+                    }
+
+                    if ((err & 2) == 4) {
                         statusTokens.add("Password.length < 8");
                     }
 
-                    if ((err & 4) == 4) {
+                    if ((err & 4) == 8) {
                         statusTokens.add("Password must contain at least: one digit, one lowercase letter, one uppercase letter, one special character");
                     }
 
@@ -155,13 +210,17 @@ public class RegisterSceneController {
             ret |= 1;
         }
 
-        //System.out.println(password.length());
-        if (password.length() < 8) {
+        if (!username.matches("[a-zA-Z0-9_]+")) {
             ret |= 2;
         }
 
-        if (!password.matches("(?=(?:.*\\d.*))(?=(?:.*[A-Z].*))(?=(?:.*[a-z].*))(?=(?:.*[\\[\\-!\\\"§$%&/()=?+*~#'_:.,;\\]].*))^.{8,}$")) {
+        //System.out.println(password.length());
+        if (password.length() < 8) {
             ret |= 4;
+        }
+
+        if (!password.matches("(?=(?:.*\\d.*))(?=(?:.*[A-Z].*))(?=(?:.*[a-z].*))(?=(?:.*[\\[\\-!\\\"§$%&/()=?+*~#'_:.,;\\]].*))^.{8,}$")) {
+            ret |= 8;
         }
 
         System.out.println(ret);

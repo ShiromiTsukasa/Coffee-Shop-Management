@@ -33,11 +33,15 @@ public class LoginSceneController {
     private Stage stage;
 
     public void switchToMainOrderScene(ActionEvent event) throws IOException{
-        FXMLLoader loader =new FXMLLoader(Main.class.getResource("MainOrderScene.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("MainOrderScene.fxml"));
         root = loader.load();
         MainOrderSceneController controller = loader.getController();
         controller.setUserProfile(userName.getText());
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        controller.setMainStage(stage);
+        controller.do_init();
+        
         Scene scene = new Scene(root);
         stage.setTitle("Main order Screen");
         stage.setScene(scene);
@@ -76,14 +80,13 @@ public class LoginSceneController {
                 }
             }
 
-            // TODO: Replace this with referal to the main content once the FXML is done
             if (found) {
                 System.out.println("User found");
                 System.out.println(userName.getText());
                 try{
                     stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
                     stage.setUserData(new UserProfile(userName.getText()));
-                    
+
                     switchToMainOrderScene(event);
                 }catch (Exception e){
                     e.printStackTrace();
