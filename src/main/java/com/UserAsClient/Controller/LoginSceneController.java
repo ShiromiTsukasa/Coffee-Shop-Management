@@ -136,25 +136,4 @@ public class LoginSceneController {
             e.printStackTrace();
         }
     }
-
-    @FXML
-    private void sendToTestField(ActionEvent event) {
-        event.consume();
-
-        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("test.fxml"));
-        try {
-            Parent root = loader.load();
-            TestController controller = loader.getController();
-
-            Scene scene = new Scene(root, 600, 400);
-
-            stage.setTitle("Test Field");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

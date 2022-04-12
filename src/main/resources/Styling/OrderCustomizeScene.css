@@ -1,0 +1,16 @@
+.main-background-color{
+    -fx-background-color: white;
+}
+.price-label{
+    -fx-background-color: #3c3030;
+    -fx-text-fill: #e1ab53;
+    -fx-background-radius: 10px;
+}
+.button-quantity{
+    -fx-background-color: #dc4c4c;
+    -fx-text-fill: white;
+    -fx-background-radius: 50%;
+}
+.quantity-box{
+
+}
