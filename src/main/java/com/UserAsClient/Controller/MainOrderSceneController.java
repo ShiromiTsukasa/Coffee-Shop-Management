@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.json.*;
+
 public class MainOrderSceneController implements Initializable {
     Parent root;
     Scene scene;
@@ -60,10 +62,28 @@ public class MainOrderSceneController implements Initializable {
         // TODO: initialize receipt stuffs
     }
 
+    public void setMainStage(Stage mainStage) {
+        this.stage = mainStage;
+    }
+
+    public void do_init() {
+        UserProfile userProfileData = (UserProfile) stage.getUserData();
+        JSONObject currentOrder = userProfileData.getCurrentOrder();
+        currentOrder.clear();
+        currentOrder.put("name", userProfile.getText());
+        currentOrder.put("orders", new JSONArray());
+        userProfileData.setCurrentOrder(currentOrder);
+        stage.setUserData(userProfileData);
+    }
+
     @FXML
     Button logOutButton;
 
     public void logout(ActionEvent event) throws IOException{
+        UserProfile userProfileData = (UserProfile) stage.getUserData();
+        System.out.println(userProfileData.getCurrentOrder().toString(4));
+        userProfileData.setCurrentOrder(new JSONObject());
+
         System.out.println("Successfully logout");
         root = FXMLLoader.load(Main.class.getResource("loginScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -71,12 +91,29 @@ public class MainOrderSceneController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Login");
         stage.show();
+
+        do_init();
     }
 
-    private void sendToOrderCustomizeScene(Coffee coffee) {
+    private void sendToOrderCustomizeScene(Coffee coffee, Stage oldStage) {
         try {
             // TODO: Change to refer to OrderCustomizeScene.fxml once done
             System.out.println("Changing to OrderCustomizeScene: " + coffee.getName());
+
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("OrderCustomizeScene.fxml"));
+            root = loader.load();
+            OrderCustomizeSceneController controller = loader.getController();
+            controller.setCoffeeName(coffee);
+            controller.setPrices(coffee.getPriceSmall(), coffee.getPriceMedium(), coffee.getPriceLarge());
+            controller.setMainStage(oldStage);
+            
+            scene = new Scene(root);
+            Stage newStage = new Stage();
+            newStage.setUserData(oldStage.getUserData());
+            newStage.setScene(scene);
+            newStage.setTitle("Order Customize");
+            newStage.show();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,46 +121,55 @@ public class MainOrderSceneController implements Initializable {
 
     @FXML
     public void orderCustomizeAmericano(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.AMERICANO);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.AMERICANO, stage);
     }
 
     @FXML
     public void orderCustomizeCappuccino(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.CAPPUCCINO);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.CAPPUCCINO, stage);
     }
 
     @FXML
     public void orderCustomizeEspresso(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.ESPRESSO);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.ESPRESSO, stage);
     }
 
     @FXML
     public void orderCustomizeLatte(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.LATTE);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.LATTE, stage);
     }
 
     @FXML
     public void orderCustomizeMocha(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.MOCHA);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.MOCHA, stage);
     }
 
     @FXML
     public void orderCustomizeMicchiato(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.MICCHIATO);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.MICCHIATO, stage);
     }
 
     @FXML
     public void orderCustomizeRedEye(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.RED_EYE);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.RED_EYE, stage);
     }
 
     @FXML
     public void orderCustomizeBlackEye(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.BLACK_EYE);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.BLACK_EYE, stage);
     }
 
     @FXML
     public void orderCustomizeIceCoffee(ActionEvent event) {
-        sendToOrderCustomizeScene(Coffee.ICE_COFFEE);
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        sendToOrderCustomizeScene(Coffee.ICE_COFFEE, stage);
     }
 }
