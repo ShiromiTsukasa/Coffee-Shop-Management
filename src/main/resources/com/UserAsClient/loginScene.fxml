@@ -27,8 +27,9 @@
                <rowConstraints>
                   <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="67.0" prefWidth="122.0" stylesheets="@../../Styling/LoginSceneStyle.css" text="Username: ">
@@ -67,20 +68,16 @@
                         <String fx:value="field" />
                      </styleClass>
                   </PasswordField>
-                  <StackPane prefHeight="46.0" prefWidth="384.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                  <StackPane prefHeight="46.0" prefWidth="384.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
                      <children>
-                        <Button fx:id="loginButton" alignment="CENTER" maxHeight="47.0" maxWidth="164.0" minHeight="43.0" minWidth="150.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="150.0" style="-fx-background-radius: 20;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Login" textAlignment="CENTER">
+                        <Button fx:id="loginButton" alignment="CENTER" maxHeight="30.0" maxWidth="120.0" minHeight="43.0" minWidth="138.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="138.0" style="-fx-background-radius: 20; -fx-font-size: 20px;" styleClass="textFont" stylesheets="@../../Styling/LoginSceneStyle.css" text="Login" textAlignment="CENTER">
                            <font>
                               <Font size="11.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="textFont" />
-                              <String fx:value="button" />
-                           </styleClass>
                         </Button>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
                      <children>
                         <Hyperlink fx:id="registerLink" alignment="CENTER" onAction="#moveToRegister" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" stylesheets="@../../Styling/LoginSceneStyle.css" text="Register" textFill="WHITE">
                            <font>
@@ -93,6 +90,7 @@
                         </Hyperlink>
                      </children>
                   </StackPane>
+                  <Label fx:id="loginFailedMessage" alignment="CENTER" prefHeight="23.0" prefWidth="412.0" textAlignment="CENTER" textFill="#ff6b00" GridPane.columnSpan="2" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
