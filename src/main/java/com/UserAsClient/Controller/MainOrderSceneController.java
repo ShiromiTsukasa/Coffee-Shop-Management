@@ -71,7 +71,7 @@ public class MainOrderSceneController implements Initializable {
         JSONObject currentOrder = userProfileData.getCurrentOrder();
         currentOrder.clear();
         currentOrder.put("name", userProfile.getText());
-        currentOrder.put("orders", new JSONArray());
+        currentOrder.put("orders", new JSONObject());
         userProfileData.setCurrentOrder(currentOrder);
         stage.setUserData(userProfileData);
     }
@@ -81,7 +81,19 @@ public class MainOrderSceneController implements Initializable {
 
     public void logout(ActionEvent event) throws IOException{
         UserProfile userProfileData = (UserProfile) stage.getUserData();
-        System.out.println(userProfileData.getCurrentOrder().toString(4));
+        JSONObject currentOrder = userProfileData.getCurrentOrder();
+
+        double superTotalPrice = 0;
+
+        for (String keys: currentOrder.getJSONObject("orders").keySet()) {
+            JSONObject order = currentOrder.getJSONObject("orders").getJSONObject(keys);
+            double totalPrice = order.getDouble("totalPrice");
+            superTotalPrice += totalPrice;
+        }
+
+        currentOrder.put("superTotalPrice", superTotalPrice);
+        
+        System.out.println(currentOrder.toString(4));
         userProfileData.setCurrentOrder(new JSONObject());
 
         System.out.println("Successfully logout");
@@ -97,6 +109,13 @@ public class MainOrderSceneController implements Initializable {
 
     private void sendToOrderCustomizeScene(Coffee coffee, Stage oldStage) {
         try {
+            Lock lock = Lock.getInstance();
+
+            if (!lock.acquire()) {
+                System.out.println("Lock is not available");
+                return;
+            }
+
             // TODO: Change to refer to OrderCustomizeScene.fxml once done
             System.out.println("Changing to OrderCustomizeScene: " + coffee.getName());
 
@@ -112,6 +131,10 @@ public class MainOrderSceneController implements Initializable {
             newStage.setUserData(oldStage.getUserData());
             newStage.setScene(scene);
             newStage.setTitle("Order Customize");
+
+            controller.setOwnStage(newStage);
+            controller.overrideOnCloseRequest();
+
             newStage.show();
             
         } catch (Exception e) {
