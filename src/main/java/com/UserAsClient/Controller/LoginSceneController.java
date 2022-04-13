@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -29,6 +30,8 @@ public class LoginSceneController {
 
     @FXML
     public TextField password;
+    @FXML
+    public Label loginFailedMessage;
 
     private Stage stage;
 
@@ -46,6 +49,9 @@ public class LoginSceneController {
         stage.setTitle("Main order Screen");
         stage.setScene(scene);
         stage.show();
+    }
+    public void displayFailedLogin(){
+        loginFailedMessage.setText("Username or Password is incorrect!");
     }
     @FXML
     private void login(ActionEvent event) {
@@ -109,6 +115,7 @@ public class LoginSceneController {
                 }*/
             } else {
                 System.out.println("User not found");
+                displayFailedLogin();
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
