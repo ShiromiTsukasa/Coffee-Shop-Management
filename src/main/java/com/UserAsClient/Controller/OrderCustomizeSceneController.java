@@ -3,10 +3,12 @@ package com.UserAsClient.Controller;
 import org.json.*;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class OrderCustomizeSceneController {
     @FXML
@@ -56,6 +58,23 @@ public class OrderCustomizeSceneController {
 
     private Stage mainStage;
 
+    private Stage thisStage;
+
+    public void overrideOnCloseRequest() {
+        thisStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent e) {
+                thisStage.close();
+
+                Lock lock = Lock.getInstance();
+                lock.release();
+            }
+        });
+    }
+
+    public void setOwnStage(Stage stage) {
+        this.thisStage = stage;
+    }
     public void setCoffeeName(Coffee coffee) {
         coffeeName.setText(coffee.getName());
     }
@@ -137,6 +156,9 @@ public class OrderCustomizeSceneController {
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
 
         stage.close();
+
+        Lock lock = Lock.getInstance();
+        lock.release();
     }
 
     @FXML
@@ -156,6 +178,10 @@ public class OrderCustomizeSceneController {
             return;
         }
 
+        double smallPrice = smallCount * coffee.getPriceSmall();
+        double mediumPrice = mediumCount * coffee.getPriceMedium();
+        double largePrice = largeCount * coffee.getPriceLarge();
+
         UserProfile userProfile = (UserProfile) stage.getUserData();
 
         JSONObject order = new JSONObject();
@@ -165,41 +191,32 @@ public class OrderCustomizeSceneController {
         JSONObject sizes = new JSONObject();
 
         if (smallCount > 0) {
-            JSONObject smallSize = new JSONObject().put("small", smallCount).put("price", coffee.getPriceSmall() * smallCount).put("qty", smallCount);
+            JSONObject smallSize = new JSONObject().put("price", smallPrice).put("qty", smallCount);
             sizes.put("small", smallSize);
         }
 
         if (mediumCount > 0) {
-            JSONObject mediumSize = new JSONObject().put("medium", mediumCount).put("price", coffee.getPriceMedium() * mediumCount).put("qty", mediumCount);
+            JSONObject mediumSize = new JSONObject().put("price", mediumPrice).put("qty", mediumCount);
             sizes.put("medium", mediumSize);
         }
 
         if (largeCount > 0) {
-            JSONObject largeSize = new JSONObject().put("large", largeCount).put("price", coffee.getPriceLarge() * largeCount).put("qty", largeCount);
+            JSONObject largeSize = new JSONObject().put("price", largePrice).put("qty", largeCount);
             sizes.put("large", largeSize);
         }
 
         order.put("sizes", sizes);
 
-        order.put("totalPrice", coffee.getPriceSmall() * smallCount + coffee.getPriceLarge() * mediumCount + coffee.getPriceMedium() * largeCount);
+        order.put("totalPrice", smallPrice + mediumPrice + largePrice);
 
         System.out.println(order.toString(2));
 
         JSONObject currentOrder = userProfile.getCurrentOrder();
-        JSONArray ordersArray = currentOrder.getJSONArray("orders");
+        
+        JSONObject orders = currentOrder.getJSONObject("orders");
+        orders.put(coffeeName.getText(), order);
 
-        for (int i = 0; i < ordersArray.length(); i++) {
-            JSONObject orderObj = ordersArray.getJSONObject(i);
-
-            if (orderObj.getString("coffee").equals(coffeeName.getText())) {
-                ordersArray.remove(i);
-
-                ordersArray.put(order);
-                break;
-            }
-        }
-
-        currentOrder.put("orders", ordersArray);
+        currentOrder.put("orders", orders);
         userProfile.setCurrentOrder(currentOrder);
 
         stage.setUserData(userProfile);
