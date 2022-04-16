@@ -10,6 +10,10 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class OrderCustomizeSceneController {
     @FXML
     public Label coffeeName;
@@ -152,7 +156,6 @@ public class OrderCustomizeSceneController {
     @FXML
     public void handleCancelOrder(ActionEvent event) {
         event.consume();
-
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
 
         stage.close();
@@ -175,6 +178,12 @@ public class OrderCustomizeSceneController {
 
         if (smallCount == 0 && mediumCount == 0 && largeCount == 0) {
             System.out.println("Order failed: no coffee selected");
+
+            // TODO: to close the customizeOrder window (Add by Panha)
+            stage.close();
+
+            Lock lock = Lock.getInstance();
+            lock.release();
             return;
         }
 
@@ -221,5 +230,21 @@ public class OrderCustomizeSceneController {
 
         stage.setUserData(userProfile);
         mainStage.setUserData(userProfile);
+
+        // TODO: write to file json as temporary for displaying on receipt (Panha)
+        try{
+            FileWriter writeData = new FileWriter("data/userAsClient/"+userProfile.getUserName()+"/temporaryOrderData.json");
+            writeData.write(orders.toString(4));
+            writeData.flush();
+            writeData.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        // TODO: to close the customizeOrder window (Add by Panha)
+        stage.close();
+
+        Lock lock = Lock.getInstance();
+        lock.release();
     }
 }

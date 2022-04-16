@@ -1,0 +1,96 @@
+{
+    "1019": {
+        "superTotalPrice": 6,
+        "name": "HiiPanha",
+        "orders": {
+            "Mocha": {
+                "sizes": {"medium": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Mocha"
+            },
+            "Red Eye": {
+                "sizes": {"large": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Red Eye"
+            }
+        }
+    },
+    "1018": {
+        "superTotalPrice": 5.5,
+        "name": "panhaGKP",
+        "orders": {
+            "Mocha": {
+                "sizes": {"small": {
+                    "price": 2.5,
+                    "qty": 1
+                }},
+                "totalPrice": 2.5,
+                "coffee": "Mocha"
+            },
+            "Micchiato": {
+                "sizes": {"large": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Micchiato"
+            }
+        }
+    },
+    "1017": {
+        "superTotalPrice": 10,
+        "name": "panhaGKP",
+        "orders": {
+            "Mocha": {
+                "sizes": {"large": {
+                    "price": 7,
+                    "qty": 2
+                }},
+                "totalPrice": 7,
+                "coffee": "Mocha"
+            },
+            "Micchiato": {
+                "sizes": {"large": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Micchiato"
+            }
+        }
+    },
+    "1020": {
+        "superTotalPrice": 7.5,
+        "name": "vuthyGKP",
+        "orders": {
+            "Micchiato": {
+                "sizes": {"large": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Micchiato"
+            },
+            "Cappuccino": {
+                "sizes": {
+                    "small": {
+                        "price": 2,
+                        "qty": 1
+                    },
+                    "medium": {
+                        "price": 2.5,
+                        "qty": 1
+                    }
+                },
+                "totalPrice": 4.5,
+                "coffee": "Cappuccino"
+            }
+        }
+    }
+}

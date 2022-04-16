@@ -1,0 +1,28 @@
+{"1020": {
+    "superTotalPrice": 7.5,
+    "name": "vuthyGKP",
+    "orders": {
+        "Micchiato": {
+            "sizes": {"large": {
+                "price": 3,
+                "qty": 1
+            }},
+            "totalPrice": 3,
+            "coffee": "Micchiato"
+        },
+        "Cappuccino": {
+            "sizes": {
+                "small": {
+                    "price": 2,
+                    "qty": 1
+                },
+                "medium": {
+                    "price": 2.5,
+                    "qty": 1
+                }
+            },
+            "totalPrice": 4.5,
+            "coffee": "Cappuccino"
+        }
+    }
+}}

@@ -1,0 +1,18 @@
+{
+    "Mocha": {
+        "sizes": {"medium": {
+            "price": 3,
+            "qty": 1
+        }},
+        "totalPrice": 3,
+        "coffee": "Mocha"
+    },
+    "Red Eye": {
+        "sizes": {"large": {
+            "price": 3,
+            "qty": 1
+        }},
+        "totalPrice": 3,
+        "coffee": "Red Eye"
+    }
+}

@@ -234,6 +234,7 @@
       </Label>
       <Label fx:id="userProfile" alignment="CENTER" layoutX="763.0" layoutY="11.0" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="User Name" textAlignment="CENTER" />
       <ListView fx:id="recieptView" layoutX="564.0" layoutY="98.0" prefHeight="520.0" prefWidth="320.0" />
-      <Button fx:id="logOutButton" layoutX="808.0" layoutY="622.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Log out" />
+      <Button fx:id="logOutButton" layoutX="810.0" layoutY="51.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="76.0" style="-fx-background-radius: 20;" text="Log out" />
+      <Button fx:id="confirmOrderButton" layoutX="803.0" layoutY="628.0" mnemonicParsing="false" onAction="#confirmOrder" text="Confirm order" />
    </children>
 </Pane>
