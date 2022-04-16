@@ -22,7 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginSceneController {
-    private Scene scene;
     private Parent root;
     @FXML
     public TextField userName;

@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class adminLogin {
-    private Scene scene;
     private Parent root;
     @FXML
     public TextField adminName;

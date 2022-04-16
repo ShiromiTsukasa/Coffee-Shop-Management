@@ -8,8 +8,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -101,9 +99,24 @@ public class adminDashbord implements Initializable {
     }
 
     @FXML
-    public void addNewAdmin(ActionEvent event) {
-        // TODO: refer to addNewAdminScene
+    public void addNewAdmin(ActionEvent event) throws IOException {
+        event.consume();
 
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("addNewAdmin.fxml"));
+        Parent root = loader.load();
+        
+        try {
+            AddNewAdminController controller = loader.getController();
+            controller.setWrapText();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        Scene scene = new Scene(root);
+        Stage newStage = new Stage();
+        newStage.setTitle("Add New Admin");
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     @FXML

@@ -199,7 +199,9 @@ public class RegisterSceneController {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
-            sc.close();
+            if (sc != null) {
+                sc.close();
+            }
         }
     }
 
@@ -222,8 +224,7 @@ public class RegisterSceneController {
         if (!password.matches("(?=(?:.*\\d.*))(?=(?:.*[A-Z].*))(?=(?:.*[a-z].*))(?=(?:.*[\\[\\-!\\\"§$%&/()=?+*~#'_:.,;\\]].*))^.{8,}$")) {
             ret |= 8;
         }
-
-        System.out.println(ret);
+        
         return ret;
     }
 }
