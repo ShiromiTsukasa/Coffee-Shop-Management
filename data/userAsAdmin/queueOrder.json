@@ -1,6 +1,7 @@
 {
     "1019": {
         "superTotalPrice": 6,
+        "orderId": "1019",
         "name": "HiiPanha",
         "orders": {
             "Mocha": {
@@ -23,6 +24,7 @@
     },
     "1018": {
         "superTotalPrice": 5.5,
+        "orderId": "1018",
         "name": "panhaGKP",
         "orders": {
             "Mocha": {
@@ -43,30 +45,22 @@
             }
         }
     },
-    "1017": {
-        "superTotalPrice": 10,
-        "name": "panhaGKP",
-        "orders": {
-            "Mocha": {
-                "sizes": {"large": {
-                    "price": 7,
-                    "qty": 2
-                }},
-                "totalPrice": 7,
-                "coffee": "Mocha"
-            },
-            "Micchiato": {
-                "sizes": {"large": {
-                    "price": 3,
-                    "qty": 1
-                }},
-                "totalPrice": 3,
-                "coffee": "Micchiato"
-            }
-        }
+    "1022": {
+        "superTotalPrice": 18,
+        "orderId": "1022",
+        "name": "thyrak",
+        "orders": {"Ice Coffee": {
+            "sizes": {"large": {
+                "price": 18,
+                "qty": 6
+            }},
+            "totalPrice": 18,
+            "coffee": "Ice Coffee"
+        }}
     },
     "1020": {
         "superTotalPrice": 7.5,
+        "orderId": "1020",
         "name": "vuthyGKP",
         "orders": {
             "Micchiato": {

@@ -1,30 +1,18 @@
 {
-    "1017": {
-        "superTotalPrice": "$10.00",
-        "orderId": "1017",
-        "name": "panhaGKP",
-        "orders": {
-            "Mocha": {
-                "sizes": {"large": {
-                    "price": 7,
-                    "qty": 2
-                }},
-                "totalPrice": 7,
-                "coffee": "Mocha"
-            },
-            "Micchiato": {
-                "sizes": {"large": {
-                    "price": 3,
-                    "qty": 1
-                }},
-                "totalPrice": 3,
-                "coffee": "Micchiato"
-            }
-        }
+    "1022": {
+        "superTotalPrice": 18,
+        "name": "thyrak",
+        "orders": {"Ice Coffee": {
+            "sizes": {"large": {
+                "price": 18,
+                "qty": 6
+            }},
+            "totalPrice": 18,
+            "coffee": "Ice Coffee"
+        }}
     },
     "1021": {
-        "superTotalPrice": "$17.50",
-        "orderId": "1021",
+        "superTotalPrice": 17.5,
         "name": "thyrak",
         "orders": {
             "Ice Coffee": {

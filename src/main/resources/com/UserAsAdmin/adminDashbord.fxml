@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="660.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsAdmin.Controller.adminDashbord">
+<AnchorPane prefHeight="660.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsAdmin.Controller.adminDashbord">
    <children>
       <ScrollPane fx:id="leftSccrollpane" layoutX="12.0" layoutY="74.0" prefHeight="361.0" prefWidth="538.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="537.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="522.0">
                <children>
-                  <ListView fx:id="leftListview" layoutX="-2.0" prefHeight="347.0" prefWidth="524.0" />
+                  <TableView fx:id="leftTable" layoutX="8.0" layoutY="8.0" prefHeight="337.0" prefWidth="506.0">
+                    <columns>
+                      <TableColumn fx:id="briefOrderIdCol" prefWidth="46.0" text="ID" />
+                      <TableColumn fx:id="briefOrderUsernameCol" prefWidth="119.0" text="Username" />
+                        <TableColumn fx:id="briefContentCol" prefWidth="340.0" text="Brief Content" />
+                    </columns>
+                  </TableView>
                </children></AnchorPane>
         </content>
       </ScrollPane>
       <ScrollPane fx:id="rightScrollpane" layoutX="571.0" layoutY="74.0" prefHeight="361.0" prefWidth="315.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="316.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="312.0">
                <children>
-                  <Label layoutX="30.0" layoutY="14.0" text="ID" />
-                  <Label layoutX="12.0" layoutY="55.0" prefHeight="17.0" prefWidth="61.0" text="Username" />
-                  <ListView fx:id="rightListview" layoutX="102.0" layoutY="7.0" prefHeight="92.0" prefWidth="200.0" />
+                  <Label layoutX="37.0" layoutY="14.0" text="ID" />
+                  <Label layoutX="13.0" layoutY="57.0" prefHeight="17.0" prefWidth="61.0" text="Username" />
+                  <Label fx:id="orderId" layoutX="164.0" layoutY="14.0" prefHeight="17.0" prefWidth="130.0" text="Label" />
+                  <Label fx:id="orderUsername" layoutX="164.0" layoutY="57.0" prefHeight="17.0" prefWidth="130.0" text="Label" />
+                  <Label layoutX="35.0" layoutY="314.0" prefHeight="25.0" prefWidth="29.0" text="Total" />
+                  <Label fx:id="totalPrice" layoutX="164.0" layoutY="311.0" prefHeight="31.0" prefWidth="130.0" text="Label">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                  <TableView fx:id="rightTable" layoutX="14.0" layoutY="88.0" prefHeight="200.0" prefWidth="283.0">
+                    <columns>
+                      <TableColumn fx:id="orderCoffeeCol" prefWidth="51.0" text="Coffee" />
+                      <TableColumn fx:id="orderSmallCol" prefWidth="77.0" text="Small" />
+                        <TableColumn fx:id="orderMediumCol" prefWidth="77.0" text="Medium" />
+                        <TableColumn fx:id="orderLargeCol" prefWidth="77.0" text="Large" />
+                    </columns>
+                  </TableView>
                </children></AnchorPane>
         </content>
       </ScrollPane>
@@ -29,19 +53,24 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="39.0" layoutY="465.0" mnemonicParsing="false" text="Log out">
+      <Button fx:id="logoutButton" layoutX="39.0" layoutY="465.0" mnemonicParsing="false" onAction="#logout" text="Log out">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="129.0" layoutY="465.0" mnemonicParsing="false" text="Add New Admin">
+      <Button fx:id="addNewAdminButton" layoutX="129.0" layoutY="465.0" mnemonicParsing="false" onAction="#addNewAdmin" text="Add New Admin">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="274.0" layoutY="465.0" mnemonicParsing="false" text="Refresh">
+      <Button fx:id="refreshButton" layoutX="274.0" layoutY="465.0" mnemonicParsing="false" onAction="#refresh" text="Refresh">
          <font>
             <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="completeOrderButton" layoutX="618.0" layoutY="468.0" mnemonicParsing="false" onAction="#completeOrder" prefHeight="44.0" prefWidth="233.0" text="Complete Order">
+         <font>
+            <Font size="20.0" />
          </font>
       </Button>
    </children>
