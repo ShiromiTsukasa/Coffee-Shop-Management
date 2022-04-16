@@ -86,7 +86,6 @@ public class MainOrderSceneController implements Initializable {
     Button logOutButton;
 
     public void logout(ActionEvent event) throws IOException{
-        // TODO: display final order while logout (Thyrak)
         /*UserProfile userProfileData = (UserProfile) stage.getUserData();
         JSONObject currentOrder = userProfileData.getCurrentOrder();
 
@@ -123,7 +122,6 @@ public class MainOrderSceneController implements Initializable {
                 return;
             }
 
-            // TODO: Change to refer to OrderCustomizeScene.fxml once done
             System.out.println("Changing to OrderCustomizeScene: " + coffee.getName());
 
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("OrderCustomizeScene.fxml"));
