@@ -1,5 +1,9 @@
 package com.UserAsClient.Controller;
 
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -142,6 +146,25 @@ public class LoginSceneController {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void showSourcePage(ActionEvent event) {
+        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.browse(new URI("https://github.com/Kuroyuki-Kaze/Coffee-Shop-Management"));
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Runtime runtime = Runtime.getRuntime();
+            try {
+                runtime.exec("xdg-open https://github.com/Kuroyuki-Kaze/Coffee-Shop-Management");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

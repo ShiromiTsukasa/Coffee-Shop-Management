@@ -335,6 +335,13 @@ public class adminDashbord implements Initializable {
                 orderId.setText(newSelection.getString("orderId"));
                 orderUsername.setText(newSelection.getString("name"));
                 totalPrice.setText(String.format("$%.2f", newSelection.getDouble("superTotalPrice")));
+            } else {
+                orderId.setText("");
+                orderUsername.setText("");
+                totalPrice.setText("");
+
+                setRightTableSelection(new JSONObject().put("orders", new JSONObject()));
+                rightTable.setItems(focusObs);
             }
         });
     }
