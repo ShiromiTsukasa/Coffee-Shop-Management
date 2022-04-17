@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsClient.Controller.waitingOrderSceneController">
+   <children>
+      <Label alignment="CENTER" layoutX="185.0" layoutY="88.0" prefHeight="31.0" prefWidth="230.0" text="Your Order ID is : " />
+      <Label fx:id="orderIDLabel" alignment="CENTER" layoutX="179.0" layoutY="131.0" prefHeight="52.0" prefWidth="243.0" text="1000">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Label>
+      <Label layoutX="153.0" layoutY="267.0" prefHeight="43.0" prefWidth="296.0" style="-fx-wrap-text: true;" text="Thank for ordering our coffee. Please kindly wait until the coffee is ready to served! ........" textAlignment="CENTER" />
+      <Label fx:id="finalPaymentLabel" alignment="CENTER" layoutX="208.0" layoutY="213.0" prefHeight="25.0" prefWidth="185.0" text="Total payment: $200" textAlignment="CENTER" />
+   </children>
+</Pane>
