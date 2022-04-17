@@ -88,6 +88,48 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <!-- Build an executable JAR -->
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <JavaFX-Version>17.0.1+</JavaFX-Version>
+                            <implementation-version>1.0</implementation-version>
+                            <JavaFX-Application-Class>com.UserAsClient.Main</JavaFX-Application-Class>
+                            <Class-Path>javafx-17.0.1.jar</Class-Path>
+                        </manifestEntries>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.UserAsClient.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin> -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.main.SuperMain</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
