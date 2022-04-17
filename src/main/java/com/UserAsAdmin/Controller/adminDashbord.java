@@ -251,7 +251,6 @@ public class adminDashbord implements Initializable {
         for (String key: ordersList.keySet()) {
             orders.add(ordersList.getJSONObject(key).put("orderId", key));
         }
-
         briefObs.setAll(orders);
     }
 

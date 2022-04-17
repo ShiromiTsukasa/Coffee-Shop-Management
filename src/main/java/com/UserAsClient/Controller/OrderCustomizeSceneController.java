@@ -63,6 +63,8 @@ public class OrderCustomizeSceneController {
 
     private Stage thisStage;
 
+    private MainOrderSceneController mainOrderSceneController;
+
     public void overrideOnCloseRequest() {
         thisStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
@@ -239,11 +241,19 @@ public class OrderCustomizeSceneController {
         }catch (IOException e){
             e.printStackTrace();
         }
-
         // TODO: to close the customizeOrder window (Add by Panha)
         stage.close();
 
         Lock lock = Lock.getInstance();
         lock.release();
+        try{
+            mainOrderSceneController.refresh();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        mainOrderSceneController.setTotalPaymentLabel();
+    }
+    public void setMainOrderSceneController(MainOrderSceneController mainOrderSceneController){
+        this.mainOrderSceneController = mainOrderSceneController;
     }
 }

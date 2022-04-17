@@ -34,7 +34,7 @@ public class LoginSceneController {
     private Stage stage;
 
     public void switchToMainOrderScene(ActionEvent event) throws IOException{
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
 
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("MainOrderScene.fxml"));
         root = loader.load();

@@ -1,0 +1,19 @@
+.button{
+    -fx-background-radius: 20px;
+}
+.button-yes{
+    -fx-background-color: #910101;
+    -fx-text-fill: white;
+}
+.button-yes:hover{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+.button-no{
+    -fx-background-color: #003e9f;
+    -fx-text-fill: white;
+}
+.button-no:hover{
+    -fx-background-color: #0156c7;
+    -fx-text-fill: white;
+}
