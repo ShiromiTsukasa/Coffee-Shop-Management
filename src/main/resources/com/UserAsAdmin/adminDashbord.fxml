@@ -1,16 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsAdmin.Controller.adminDashbord">
+<AnchorPane prefHeight="581.0" prefWidth="900.0" stylesheets="@../../Styling/adminDashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsAdmin.Controller.adminDashbord">
    <children>
-      <Label layoutX="197.0" layoutY="131.0" prefHeight="79.0" prefWidth="190.0" text="Welcome to next scene">
+      <ScrollPane fx:id="leftSccrollpane" layoutX="12.0" layoutY="74.0" prefHeight="361.0" prefWidth="538.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="522.0">
+               <children>
+                  <TableView fx:id="leftTable" layoutX="8.0" layoutY="8.0" prefHeight="337.0" prefWidth="506.0">
+                    <columns>
+                      <TableColumn fx:id="briefOrderIdCol" prefWidth="46.0" text="ID" />
+                      <TableColumn fx:id="briefOrderUsernameCol" prefWidth="119.0" text="Username" />
+                        <TableColumn fx:id="briefContentCol" prefWidth="340.0" text="Brief Content" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <ScrollPane fx:id="rightScrollpane" layoutX="571.0" layoutY="74.0" prefHeight="361.0" prefWidth="315.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="312.0">
+               <children>
+                  <Label layoutX="37.0" layoutY="14.0" text="ID" />
+                  <Label layoutX="13.0" layoutY="57.0" prefHeight="17.0" prefWidth="61.0" text="Username" />
+                  <Label fx:id="orderId" layoutX="164.0" layoutY="14.0" prefHeight="17.0" prefWidth="130.0" text="Label" />
+                  <Label fx:id="orderUsername" layoutX="164.0" layoutY="57.0" prefHeight="17.0" prefWidth="130.0" text="Label" />
+                  <Label layoutX="35.0" layoutY="314.0" prefHeight="25.0" prefWidth="29.0" text="Total" />
+                  <Label fx:id="totalPrice" layoutX="164.0" layoutY="311.0" prefHeight="31.0" prefWidth="130.0" text="Label">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                  <TableView fx:id="rightTable" layoutX="14.0" layoutY="88.0" prefHeight="200.0" prefWidth="283.0">
+                    <columns>
+                      <TableColumn fx:id="orderCoffeeCol" prefWidth="51.0" text="Coffee" />
+                      <TableColumn fx:id="orderSmallCol" prefWidth="77.0" text="Small" />
+                        <TableColumn fx:id="orderMediumCol" prefWidth="77.0" text="Medium" />
+                        <TableColumn fx:id="orderLargeCol" prefWidth="77.0" text="Large" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label alignment="CENTER" layoutX="3.0" layoutY="13.0" prefHeight="39.0" prefWidth="894.0" text="Order detail list" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="logoutButton" layoutX="39.0" layoutY="465.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-radius: 10px;" text="Log out">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="addNewAdminButton" layoutX="129.0" layoutY="465.0" mnemonicParsing="false" onAction="#addNewAdmin" style="-fx-background-radius: 10px;" text="Add New Admin">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="refreshButton" layoutX="274.0" layoutY="465.0" mnemonicParsing="false" onAction="#refresh" style="-fx-background-radius: 10px;" text="Refresh">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="completeOrderButton" layoutX="618.0" layoutY="468.0" mnemonicParsing="false" onAction="#completeOrder" prefHeight="44.0" prefWidth="233.0" style="-fx-background-radius: 10px;" text="Complete Order">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
+   <styleClass>
+      <String fx:value="pane-background" />
+      <String fx:value="admin-dashboard-background-img" />
+   </styleClass>
 </AnchorPane>

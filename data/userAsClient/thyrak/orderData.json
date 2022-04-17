@@ -1,7 +1,6 @@
 {
     "1022": {
         "superTotalPrice": 18,
-        "orderId": "1022",
         "name": "thyrak",
         "orders": {"Ice Coffee": {
             "sizes": {"large": {
@@ -12,23 +11,22 @@
             "coffee": "Ice Coffee"
         }}
     },
-    "1020": {
-        "superTotalPrice": 7.5,
-        "orderId": "1020",
-        "name": "vuthyGKP",
+    "1021": {
+        "superTotalPrice": 17.5,
+        "name": "thyrak",
         "orders": {
-            "Micchiato": {
+            "Ice Coffee": {
                 "sizes": {"large": {
                     "price": 3,
                     "qty": 1
                 }},
                 "totalPrice": 3,
-                "coffee": "Micchiato"
+                "coffee": "Ice Coffee"
             },
-            "Cappuccino": {
+            "Micchiato": {
                 "sizes": {
-                    "small": {
-                        "price": 2,
+                    "large": {
+                        "price": 3,
                         "qty": 1
                     },
                     "medium": {
@@ -36,7 +34,21 @@
                         "qty": 1
                     }
                 },
-                "totalPrice": 4.5,
+                "totalPrice": 5.5,
+                "coffee": "Micchiato"
+            },
+            "Cappuccino": {
+                "sizes": {
+                    "small": {
+                        "price": 4,
+                        "qty": 2
+                    },
+                    "medium": {
+                        "price": 5,
+                        "qty": 2
+                    }
+                },
+                "totalPrice": 9,
                 "coffee": "Cappuccino"
             }
         }

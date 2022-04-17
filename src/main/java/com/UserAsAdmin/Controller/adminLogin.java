@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class adminLogin {
-    private Scene scene;
     private Parent root;
     @FXML
     public TextField adminName;
@@ -40,7 +39,7 @@ public class adminLogin {
 //        controller.do_init();
 
         Scene scene = new Scene(root);
-        stage.setTitle("Next scene");
+        stage.setTitle("Order Detail List");
         stage.setScene(scene);
         stage.show();
     }
