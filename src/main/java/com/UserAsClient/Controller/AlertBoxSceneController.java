@@ -1,12 +1,8 @@
 package com.UserAsClient.Controller;
 
-import com.UserAsClient.Controller.Lock;
-import com.UserAsClient.Controller.LockOnAlertBox;
-import com.UserAsClient.Controller.MainOrderSceneController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;

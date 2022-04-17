@@ -7,3 +7,6 @@
 .main-order-background-color{
     -fx-background-color: #3c3030;
 }
+.roundButton{
+    -fx-background-radius: 20px;
+}

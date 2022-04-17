@@ -3,3 +3,11 @@
     -fx-font-family: Comfortaa;
     font-family: Comfortaa;
 }
+.background-image{
+    -fx-background-image: url("../assets/5310800.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 600 auto;
+}
+.register-box-background{
+    -fx-background-color: #e1ab53df;
+}

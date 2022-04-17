@@ -180,11 +180,11 @@ public class RegisterSceneController {
                         statusTokens.add("Username contains invalid character!");
                     }
 
-                    if ((err & 2) == 4) {
+                    if ((err & 4) == 4) {
                         statusTokens.add("Password.length < 8");
                     }
 
-                    if ((err & 4) == 8) {
+                    if ((err & 8) == 8) {
                         statusTokens.add("Password must contain at least: one digit, one lowercase letter, one uppercase letter, one special character");
                     }
 

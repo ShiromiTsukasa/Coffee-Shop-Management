@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 .textFont{
     -fx-font-family: Comfortaa;
     font-family: Comfortaa;
@@ -6,7 +6,6 @@
 
 .button, .field {
     -fx-font-size: 24px;
-    font-size: 24px;
 }
 
 .link {
@@ -45,5 +44,8 @@
 
 .buttonAdmin {
     -fx-font-size: 15px;
+}
+.title-weight{
+    -fx-font-weight: 600;
 }
 
