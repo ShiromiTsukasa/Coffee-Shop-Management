@@ -1,0 +1,7 @@
+.pane-background{
+    -fx-background-color: rgba(60,48,48,255);
+    -fx-background-radius: 10px;
+}
+.label-color{
+    -fx-text-fill: white;
+}

@@ -39,7 +39,7 @@ public class adminLogin {
 //        controller.do_init();
 
         Scene scene = new Scene(root);
-        stage.setTitle("Next scene");
+        stage.setTitle("Order Detail List");
         stage.setScene(scene);
         stage.show();
     }
