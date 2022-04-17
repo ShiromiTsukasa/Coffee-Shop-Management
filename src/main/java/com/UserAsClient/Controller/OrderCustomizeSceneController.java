@@ -63,7 +63,6 @@ public class OrderCustomizeSceneController {
     private Stage mainStage;
 
     private Stage thisStage;
-  //  private double totalAllPrice = 0;
 
     public void overrideOnCloseRequest() {
         thisStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -241,12 +240,11 @@ public class OrderCustomizeSceneController {
         }catch (IOException e){
             e.printStackTrace();
         }
-    //    totalAllPrice = smallPrice + mediumPrice + largePrice;
+
         // TODO: to close the customizeOrder window (Add by Panha)
         stage.close();
 
         Lock lock = Lock.getInstance();
         lock.release();
     }
-
 }
