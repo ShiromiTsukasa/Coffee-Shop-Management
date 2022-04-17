@@ -68,6 +68,19 @@
             }
         }
     },
+    "1022": {
+        "superTotalPrice": "$18.00",
+        "orderId": "1022",
+        "name": "thyrak",
+        "orders": {"Ice Coffee": {
+            "sizes": {"large": {
+                "price": 18,
+                "qty": 6
+            }},
+            "totalPrice": 18,
+            "coffee": "Ice Coffee"
+        }}
+    },
     "1021": {
         "superTotalPrice": "$17.50",
         "orderId": "1021",

@@ -1,16 +1,83 @@
 {
-    "1022": {
-        "superTotalPrice": 18,
-        "orderId": "1022",
+    "1019": {
+        "superTotalPrice": 6,
+        "orderId": "1019",
+        "name": "HiiPanha",
+        "orders": {
+            "Mocha": {
+                "sizes": {"medium": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Mocha"
+            },
+            "Red Eye": {
+                "sizes": {"large": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Red Eye"
+            }
+        }
+    },
+    "1018": {
+        "superTotalPrice": 5.5,
+        "orderId": "1018",
+        "name": "panhaGKP",
+        "orders": {
+            "Mocha": {
+                "sizes": {"small": {
+                    "price": 2.5,
+                    "qty": 1
+                }},
+                "totalPrice": 2.5,
+                "coffee": "Mocha"
+            },
+            "Micchiato": {
+                "sizes": {"large": {
+                    "price": 3,
+                    "qty": 1
+                }},
+                "totalPrice": 3,
+                "coffee": "Micchiato"
+            }
+        }
+    },
+    "1033": {
+        "superTotalPrice": 22.5,
         "name": "thyrak",
-        "orders": {"Ice Coffee": {
-            "sizes": {"large": {
-                "price": 18,
-                "qty": 6
-            }},
-            "totalPrice": 18,
-            "coffee": "Ice Coffee"
-        }}
+        "orders": {
+            "Ice Coffee": {
+                "sizes": {
+                    "large": {
+                        "price": 6,
+                        "qty": 2
+                    },
+                    "medium": {
+                        "price": 2.5,
+                        "qty": 1
+                    }
+                },
+                "totalPrice": 8.5,
+                "coffee": "Ice Coffee"
+            },
+            "Micchiato": {
+                "sizes": {
+                    "large": {
+                        "price": 9,
+                        "qty": 3
+                    },
+                    "medium": {
+                        "price": 5,
+                        "qty": 2
+                    }
+                },
+                "totalPrice": 14,
+                "coffee": "Micchiato"
+            }
+        }
     },
     "1020": {
         "superTotalPrice": 7.5,
