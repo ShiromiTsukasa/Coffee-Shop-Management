@@ -26,3 +26,24 @@
     -fx-background-color: rgba(233, 171, 96, 0.58);
     -fx-background-radius: 10px;
 }
+.pane-background1{
+     -fx-background-color: rgb(232,180,116);
+     -fx-background-radius: 10px;
+}
+.admin-login-background-img {
+     -fx-background-image: url("../assets/coffee-background1.jpg");
+     -fx-background-repeat: no-repeat;
+     -fx-background-size: auto 400;
+     -fx-background-position: center;
+}
+.admin-addNew-background-img {
+     -fx-background-image: url("../assets/coffee-glass.png");
+     -fx-background-repeat: no-repeat;
+     -fx-background-size: auto 300;
+     -fx-background-position: center;
+}
+
+.buttonAdmin {
+    -fx-font-size: 15px;
+}
+
