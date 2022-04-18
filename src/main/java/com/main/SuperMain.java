@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
-import com.UserAsClient.Main;
+import com.UserAsAdmin.Main;
 
 public class SuperMain {
     public static void main(String[] args) {

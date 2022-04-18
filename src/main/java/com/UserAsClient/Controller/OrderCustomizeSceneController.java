@@ -180,7 +180,6 @@ public class OrderCustomizeSceneController {
         if (smallCount == 0 && mediumCount == 0 && largeCount == 0) {
             System.out.println("Order failed: no coffee selected");
 
-            // TODO: to close the customizeOrder window (Add by Panha)
             stage.close();
 
             Lock lock = Lock.getInstance();
@@ -232,7 +231,6 @@ public class OrderCustomizeSceneController {
         stage.setUserData(userProfile);
         mainStage.setUserData(userProfile);
 
-        // TODO: write to file json as temporary for displaying on receipt (Panha)
         try{
             FileWriter writeData = new FileWriter("data/userAsClient/"+userProfile.getUserName()+"/temporaryOrderData.json");
             writeData.write(orders.toString(4));
@@ -241,7 +239,6 @@ public class OrderCustomizeSceneController {
         }catch (IOException e){
             e.printStackTrace();
         }
-        // TODO: to close the customizeOrder window (Add by Panha)
         stage.close();
 
         Lock lock = Lock.getInstance();
