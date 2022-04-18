@@ -1,12 +1,11 @@
 package com.UserAsClient.Controller;
 
 import java.awt.Desktop;
-import java.net.URI;
-import java.net.URISyntaxException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.Scanner;
 
