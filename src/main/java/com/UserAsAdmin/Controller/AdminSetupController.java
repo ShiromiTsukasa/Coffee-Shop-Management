@@ -9,17 +9,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringJoiner;
 
+import com.UserAsAdmin.Main;
 import com.helper.Crypter;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddNewAdminController {
+public class AdminSetupController {
     @FXML
     public TextField adminUsername;
 
@@ -33,21 +37,10 @@ public class AddNewAdminController {
     public Label adminStatusIndicator;
 
     @FXML
-    public Button cancelButton;
-
-    @FXML
     public Button confirmButton;
 
     public void setWrapText() {
         adminStatusIndicator.setWrapText(true);
-    }
-
-    @FXML
-    public void handleCancel(ActionEvent event) {
-        event.consume();
-
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
     }
 
     @FXML
@@ -96,7 +89,7 @@ public class AddNewAdminController {
                     String record = Crypter.convUPWithSalt(username, password);
                     try (BufferedWriter bf = new BufferedWriter(new FileWriter(file, true))) {
                         bf.write(record + "\n");
-                        adminStatusIndicator.setText("Successfully added new admin. You can close this window now.");
+                        adminStatusIndicator.setText("Successfully setup the first admin account! Redirecting to login page...");
                         adminStatusIndicator.setStyle("-fx-text-fill: green");
 
                         bf.flush();
@@ -134,6 +127,26 @@ public class AddNewAdminController {
                     }
                     adminStatusIndicator.setText(sj.toString());
                     adminStatusIndicator.setStyle("-fx-text-fill: red;");
+                }
+            }
+
+            if (success) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    FXMLLoader loader = new FXMLLoader(Main.class.getResource("adminLogin.fxml"));
+                    Parent root = loader.load();
+                    Stage stage = (Stage) confirmButton.getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.setTitle("Admin Login");
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
 

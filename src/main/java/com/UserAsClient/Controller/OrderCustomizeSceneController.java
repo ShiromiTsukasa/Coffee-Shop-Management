@@ -1,6 +1,9 @@
 package com.UserAsClient.Controller;
 
-import org.json.*;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.json.JSONObject;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,9 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class OrderCustomizeSceneController {
     @FXML

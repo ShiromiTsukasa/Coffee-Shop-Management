@@ -1,21 +1,13 @@
-package com.UserAsAdmin;
+package com.main;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
-import com.UserAsAdmin.Controller.AdminSetupController;
+import com.UserAsClient.Main;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-public class Main extends Application {
-    public void start(Stage stage) throws Exception {
+public class SuperMain {
+    public static void main(String[] args) {
         File dataFile = new File("data");
         try {
             boolean check = dataFile.mkdir();
@@ -94,32 +86,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        String content = new String(Files.readAllBytes(Paths.get("data/adminAccount.txt")));
-        
-        if (content.equals("")) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminSetup.fxml"));
-            Parent root = loader.load();
-            try {
-                AdminSetupController controller = loader.getController();
-                controller.setWrapText();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Scene scene = new Scene(root);
-            stage.setTitle("Admin Setup");
-            stage.setScene(scene);
-            stage.show();
-        } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(com.UserAsAdmin.Main.class.getResource("adminLogin.fxml"));
-            Parent root = fxmlLoader.load();
-            Scene scene = new Scene(root, 600, 400);
-            stage.setTitle("Admin Login");
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
 
-    public static void main(String[] args) {
-        launch(args);
+        Main.main(args);
     }
 }
