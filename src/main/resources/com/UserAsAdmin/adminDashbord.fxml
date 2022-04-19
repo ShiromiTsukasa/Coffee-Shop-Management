@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="581.0" prefWidth="900.0" stylesheets="@../../Styling/adminDashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsAdmin.Controller.adminDashbord">
+<AnchorPane prefHeight="581.0" prefWidth="900.0" stylesheets="@../../Styling/adminDashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.UserAsAdmin.Controller.adminDashbord">
    <children>
       <ScrollPane fx:id="leftSccrollpane" layoutX="12.0" layoutY="74.0" prefHeight="361.0" prefWidth="538.0">
         <content>
@@ -36,10 +40,10 @@
                      </font></Label>
                   <TableView fx:id="rightTable" layoutX="14.0" layoutY="88.0" prefHeight="200.0" prefWidth="283.0">
                     <columns>
-                      <TableColumn fx:id="orderCoffeeCol" prefWidth="51.0" text="Coffee" />
-                      <TableColumn fx:id="orderSmallCol" prefWidth="77.0" text="Small" />
-                        <TableColumn fx:id="orderMediumCol" prefWidth="77.0" text="Medium" />
-                        <TableColumn fx:id="orderLargeCol" prefWidth="77.0" text="Large" />
+                      <TableColumn fx:id="orderCoffeeCol" prefWidth="102.0" text="Coffee" />
+                      <TableColumn fx:id="orderSmallCol" prefWidth="60.0" text="Small" />
+                        <TableColumn fx:id="orderMediumCol" prefWidth="60.0" text="Medium" />
+                        <TableColumn fx:id="orderLargeCol" prefWidth="60.0" text="Large" />
                     </columns>
                   </TableView>
                </children></AnchorPane>

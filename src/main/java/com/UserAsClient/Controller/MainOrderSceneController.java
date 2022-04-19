@@ -108,7 +108,7 @@ public class MainOrderSceneController implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        // TODO: initialize receipt stuffs
+
     }
 
     public void setMainStage(Stage mainStage) {

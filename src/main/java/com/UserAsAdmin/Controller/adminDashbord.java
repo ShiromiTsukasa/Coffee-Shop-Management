@@ -269,7 +269,7 @@ public class adminDashbord implements Initializable {
 
         briefContentCol.setCellValueFactory(new Callback<CellDataFeatures<JSONObject, String>, ObservableValue<String>>() {
             public ObservableValue<String> call(CellDataFeatures<JSONObject, String> p) {
-                return new SimpleStringProperty(p.getValue().getJSONObject("orders").toString());
+                return new SimpleStringProperty(stringerize(p.getValue().getJSONObject("orders")));
             }
         });
     }
@@ -344,5 +344,32 @@ public class adminDashbord implements Initializable {
                 rightTable.setItems(focusObs);
             }
         });
+    }
+
+    private String stringerize(JSONObject orders) {
+        StringBuilder sb = new StringBuilder();
+
+        for (String key: orders.keySet()) {
+            sb.append(key);
+            sb.append(": { ");
+            try {
+                sb.append(orders.getJSONObject(key).getJSONObject("sizes").getJSONObject("small").getInt("qty"));
+                sb.append(" S, ");
+            } catch (Exception e) {}
+            
+            try {
+                sb.append(orders.getJSONObject(key).getJSONObject("sizes").getJSONObject("medium").getInt("qty"));
+                sb.append(" M, ");
+            } catch (Exception e) {}
+            
+            try {
+                sb.append(orders.getJSONObject(key).getJSONObject("sizes").getJSONObject("large").getInt("qty"));
+                sb.append(" L, ");
+            } catch (Exception e) {}
+            
+            sb.append("}, ");
+        }
+
+        return sb.toString();
     }
 }
