@@ -61,4 +61,4 @@ From there, you should see the file `target/coffee-management-${version}.jar`.
 
 Rename the file appropriately, and copy it to the directory that you would like it to be run.
 
-**Note: Due to the way that it currently works as of v1.0.0, the `admin.jar` and the `client.jar` must be in the same directory to be able to run correctly.**
+**Note: Due to the way that it currently works as of v1.1.0, the `admin.jar` and the `client.jar` must be in the same directory to be able to run correctly.**
